@@ -35,9 +35,9 @@ An AI-powered job application platform that automates the most tedious parts of 
 |---|---|---|
 | [`backend`](./backend/) | Async API powering the platform — handles auth, job tracking, JD parsing, resume optimization, referral generation, and task delegation to browser agents. | FastAPI · PostgreSQL · SQLAlchemy 2.0 · Cloudflare R2 |
 | [`frontend`](./frontend/) | Web dashboard where users manage jobs, upload resumes, view optimised resumes, and trigger automations. | React · TypeScript · Vite |
-| [`lambda-pdf`](./lambda-pdf/) | Serverless LaTeX-to-PDF compiler running on AWS Lambda (container image). Compiles optimised `.tex` resumes into PDFs on demand. Uses a frozen TeXLive snapshot for reproducible builds. | AWS Lambda · Docker · TeXLive |
-| [`linkedin_note_extension`](./linkedin_note_extension/) | Chrome Extension (Manifest V3) that automates sending LinkedIn connection requests with personalised referral notes — triggered directly from the web app, no server-side browser needed. | Chrome Extension · Manifest V3 |
-| [`auto-linkedin-jobs`](./auto-linkedin-jobs/) | Standalone pipeline that scrapes jobs from LinkedIn, Indeed, and Google Jobs every 4 hours, scores them against your resume using Gemini AI, and emails you a digest of the best matches. Runs fully automated via GitHub Actions. | Python · Gemini AI · Astra DB · GitHub Actions |
+| [`latex-engine`](./latex-engine/) | Serverless LaTeX-to-PDF compiler running on AWS Lambda (container image). Compiles optimised `.tex` resumes into PDFs on demand. Uses a frozen TeXLive snapshot for reproducible builds. | AWS Lambda · Docker · TeXLive |
+| [`extension`](./extension/) | Chrome Extension (Manifest V3) that automates sending LinkedIn connection requests with personalised referral notes — triggered directly from the web app, no server-side browser needed. | Chrome Extension · Manifest V3 |
+| [`jobs-scrapper`](./jobs-scrapper/) | Standalone pipeline that scrapes jobs from LinkedIn, Indeed, and Google Jobs every 4 hours, scores them against your resume using Gemini AI, and emails you a digest of the best matches. Runs fully automated via GitHub Actions. | Python · Gemini AI · Astra DB · GitHub Actions |
 
 ---
 
@@ -81,9 +81,9 @@ git submodule update --remote
 apply-ai/
 ├── backend/                  # FastAPI backend (submodule)
 ├── frontend/                 # React frontend (submodule)
-├── lambda-pdf/               # LaTeX → PDF Lambda (submodule)
-├── linkedin_note_extension/  # Chrome extension (submodule)
-├── auto-linkedin-jobs/       # Job scraper pipeline (submodule)
+├── latex-engine/             # LaTeX → PDF Lambda (submodule)
+├── extension/                # Chrome extension (submodule)
+├── jobs-scrapper/            # Job scraper pipeline (submodule)
 ├── .github/workflows/
 │   └── sync-submodules.yml   # Auto-sync submodules every 12 hours
 ├── .gitmodules

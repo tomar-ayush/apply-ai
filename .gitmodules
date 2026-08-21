@@ -7,14 +7,14 @@
 	url = git@github.com:tomar-ayush/frontend-resume-agent.git
 	branch = main
 [submodule "lambda-pdf"]
-	path = lambda-pdf
+	path = latex-engine
 	url = git@github.com:tomar-ayush/latex-engine-lambda.git
 	branch = main
 [submodule "linkedin_note_extension"]
-	path = linkedin_note_extension
+	path = extension
 	url = git@github.com:tomar-ayush/applyai-assistant.git
 	branch = main
 [submodule "auto-linkedin-jobs"]
-	path = auto-linkedin-jobs
+	path = jobs-scrapper
 	url = git@github.com:tomar-ayush/auto-linkedin-jobs.git
 	branch = main
