@@ -14,3 +14,7 @@
 	path = linkedin_note_extension
 	url = git@github.com:tomar-ayush/applyai-assistant.git
 	branch = main
+[submodule "auto-linkedin-jobs"]
+	path = auto-linkedin-jobs
+	url = git@github.com:tomar-ayush/auto-linkedin-jobs.git
+	branch = main
