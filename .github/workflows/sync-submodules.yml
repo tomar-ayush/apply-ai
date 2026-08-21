@@ -1,0 +1,37 @@
+name: Sync Submodules
+
+on:
+  schedule:
+    - cron: '0 */24 * * *'
+  workflow_dispatch: 
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to push the commit back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update submodules
+        run: git submodule update --remote
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "ayushtomar8624@gmail.com"
+          
+          # Check if there are any changes (meaning a submodule pointer was updated)
+          if [[ -n $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "chore: auto-sync submodules to latest main"
+            git push
+          else
+            echo "No submodule updates found. Everything is up to date."
+          fi
