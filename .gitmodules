@@ -1,0 +1,12 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:tomar-ayush/backend-resume-agent.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:tomar-ayush/frontend-resume-agent.git
+[submodule "lambda-pdf"]
+	path = lambda-pdf
+	url = git@github.com:tomar-ayush/latex-engine-lambda.git
+[submodule "linkedin_note_extension"]
+	path = linkedin_note_extension
+	url = git@github.com:tomar-ayush/applyai-assistant.git
